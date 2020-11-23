@@ -1,0 +1,16 @@
+$gutter: 24px;
+$gutter-xsmall: 16px;
+$max-width: 1200px;
+$max-width-not-panel: 1600px;
+$max-width-to-em: 75em;
+$gutter-to-em: 1.5em;
+
+$column-class: 'col1' 1, 'col2' 2, 'col3' 3, 'col4' 4, 'col5' 5, 'col6' 6, 'col7' 7, 'col8' 8, 'col9' 9, 'col10' 10, 'col11' 11, 'col12' 12;
+
+@function calculate-min-size($col) {
+    @return ($max-width-to-em - (($col + 1) * $gutter-to-em)) / $col;
+}
+
+$col-class-responsive: 'col1' 100%, 'col2' calculate-min-size(2), 'col3' calculate-min-size(3), 'col4' calculate-min-size(4),
+    'col5' calculate-min-size(5), 'col6' calculate-min-size(6), 'col7' calculate-min-size(7), 'col8' calculate-min-size(8),
+    'col9' calculate-min-size(9), 'col10' calculate-min-size(10), 'col11' calculate-min-size(11), 'col12' calculate-min-size(12);

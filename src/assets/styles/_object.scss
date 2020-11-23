@@ -1,0 +1,222 @@
+@import './settings';
+@import './flex-layout';
+@import './cubic-bezier';
+
+.rs-link {
+    color: rs-color-primary();
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.1s $primary-cubic;
+    cursor: pointer;
+}
+
+#submit-component mat-spinner circle {
+    stroke: white !important;
+}
+
+.rs-link:hover {
+    text-decoration: underline;
+    color: rs-color-primary();
+}
+
+.rs-wrapper {
+    max-width: $max-width;
+}
+
+.mat-card {
+    padding: 0 !important;
+}
+
+.rs-wrapper,
+.rs-wrapper-not-panel {
+    display: grid;
+    margin: 0 auto;
+    grid-gap: $gutter-xsmall;
+    grid-template-columns: repeat(1, 1fr);
+    padding: $gutter-xsmall;
+    box-sizing: border-box;
+
+    > * {
+        padding: 0 !important;
+    }
+
+    .mat-card {
+        margin: 0 !important;
+    }
+
+    @media (min-width: 600px) {
+        grid-gap: $gutter;
+        padding: $gutter;
+    }
+}
+
+.rs-wrapper p {
+    margin: 0;
+    padding: 12px 0;
+}
+
+.rs-wrapper li {
+    margin: 0;
+    padding-bottom: 12px;
+    font-size: 140%;
+}
+
+.rs-wrapper p > span {
+    position: relative;
+    top: 4px;
+    margin-right: 4px;
+}
+
+.rs-wrapper-not-panel {
+    max-width: $max-width-not-panel;
+    align-items: center;
+    justify-content: center;
+}
+
+@each $class in $column-class {
+    .rs-wrapper.#{nth($class, 1)},
+    .rs-wrapper-not-panel.#{nth($class, 1)} {
+        grid-template-columns: repeat(nth($class, 2), 1fr);
+    }
+}
+
+@each $class in $column-class {
+    .rs-wrapper.#{nth($class, 1)}-md,
+    .rs-wrapper-not-panel.#{nth($class, 1)}-md {
+        @media (max-width: 1440px) {
+            grid-template-columns: repeat(nth($class, 2), 1fr);
+        }
+    }
+}
+
+@each $class in $column-class {
+    .rs-wrapper.#{nth($class, 1)}-sm,
+    .rs-wrapper-not-panel.#{nth($class, 1)}-sm {
+        @media (max-width: 960px) {
+            grid-template-columns: repeat(nth($class, 2), 1fr);
+        }
+    }
+}
+
+@each $class in $column-class {
+    .rs-wrapper.#{nth($class, 1)}-xs,
+    .rs-wrapper-not-panel.#{nth($class, 1)}-xs {
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(nth($class, 2), 1fr);
+        }
+    }
+}
+
+.rs-wrapper-responsive {
+    display: grid;
+    margin: auto;
+    padding-top: 12px;
+    grid-gap: $gutter;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@each $class in $col-class-responsive {
+    .rs-wrapper-responsive.#{nth($class, 1)}-responsive {
+        grid-template-columns: repeat(auto-fill, minmax(nth($class, 2), 1fr));
+    }
+}
+
+.mat-card > * {
+    margin: 0;
+    padding: 24px 24px 0;
+
+    &:last-child {
+        padding-bottom: 24px;
+    }
+}
+
+.mat-card .mat-card-header-text {
+    margin: 0 !important;
+}
+
+.mat-card > .mat-divider {
+    position: relative !important;
+    padding: 0 !important;
+    margin: 24px 0 0 !important;
+}
+
+.mat-card .mat-card-content p:first-child {
+    padding-top: 0;
+}
+
+.not-design-system .mat-card {
+    padding: 16px !important;
+}
+
+.not-design-system .mat-card > * {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-row-center-center {
+    @include flex-layout(row, center, center);
+}
+
+.flex-row-end-center {
+    @include flex-layout(row, flex-end, center);
+}
+
+.flex-row-center-center-sm {
+    @media (max-width: 960px) {
+        @include flex-layout(row, center, center);
+    }
+}
+
+.flex-row-spacebetween-center {
+    @include flex-layout(row, space-between, center);
+}
+
+.flex-row-start-center {
+    @include flex-layout(row, flex-start, center);
+}
+
+.flex-row-center-start {
+    @include flex-layout(row, center, flex-start);
+}
+
+.flex-column-center-center {
+    @include flex-layout(column, center, center);
+}
+
+.flex-column-start-center {
+    @include flex-layout(column, flex-start, center);
+}
+
+.flex-column-center-center-sm {
+    @media (max-width: 960px) {
+        @include flex-layout(column, center, center);
+    }
+}
+
+.flex-column-center-end {
+    @include flex-layout(column, center, flex-end);
+}
+
+.flex-column-start-start {
+    @include flex-layout(column, flex-start, flex-start);
+}
+
+.flex-column-spacebetween-center {
+    @include flex-layout(column, space-between, center);
+}
+
+#dashboard app-header .mat-icon {
+    display: block !important;
+}
+
+#dashboard .rs-wrapper {
+    max-width: 100%;
+}
+
+#dashboard app-footer .close-session {
+    display: block;
+}
+
+#dashboard app-footer .login-link {
+    display: none;
+}

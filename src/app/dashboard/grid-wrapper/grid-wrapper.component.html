@@ -1,0 +1,41 @@
+<h1>Grid wrapper</h1>
+<p>Dentro del proyecto nos encontramos con una serie de clases que nos permite distribuir los elementos en columnas o filas, esto no es de utilidad a la hora de querer que un elemento padre contenga dos o mas elementos hijos. Estos elementos se distribuyen de acuerdo a un numero de columnas que definimos con las clases antes mencionadas. Estas clases nos brinda la posibilidad de definir la cantida de columnas dependiendo el tamaño del viewport.</p>
+<i>El recurso lo podemos encontrar en "src/assets/styles/_object.scss"</i>
+<p>La primer clase a tener en cuenta es rs-wrapper, la cual contiene todas las configuraciones para que el elemento padre se comporte como un a grilla con columnas y filas, además contiene un padding y un max-width (Esta clase se utilizá para las vistas como panel, etc. En caso de estar en la landing usar la clase rs-wprapper-not-panel, tiene las misma configuraciones, cambia el max-width).</p>
+<h3>Agregar la clase rs-wrapper al elemento padre</h3>
+<pre class="pre1">
+  &lt;div class=&quot;father-element rs-wrapper&quot;&gt;
+    &lt;div class=&quot;child-element&quot;&gt;Child One&lt;/div&gt;
+    &lt;div class=&quot;child-element&quot;&gt;Child two&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+<p>Por defecto la clase rs-wrapper divide a sus hijos en una columna, osea que todos los hijo que contenga el elemento ocuparán todo el espacio disponible y se acomodarán una bajo la otra</p>
+<div class="father-element rs-wrapper">
+  <div class="child-element"> Child One</div>
+  <div class="child-element"> Child Two</div>
+</div>
+<h3>Ahora para dividir el elemento padre en mas columnas basta con agregarle la clase col2 y los hijos se acomodarán en dos columnas</h3>
+<pre class="pre1">
+  &lt;div class=&quot;father-element rs-wrapper col2&quot;&gt;
+    &lt;div class=&quot;child-element&quot;&gt;Child One&lt;/div&gt;
+    &lt;div class=&quot;child-element&quot;&gt;Child two&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+<div class="father-element rs-wrapper col2">
+  <div class="child-element"> Child One</div>
+  <div class="child-element"> Child Two</div>
+</div>
+<h3>Si queremos definir distinta catidad de columnas dependiendo del tamaño del viewport existen las siguentes clases</h3>
+<p><b>col2-xs:</b> el elemento padre si dividirá en dos (se puede definir hasta doce columnas) columnas cundo el viewport sea menor a 600px</p>
+<p><b>col2-sm:</b> el elemento padre si dividirá en dos (se puede definir hasta doce columnas) columnas cundo el viewport sea menor a 960px</p>
+<p><b>col2-md:</b> el elemento padre si dividirá en dos (se puede definir hasta doce columnas) columnas cundo el viewport sea menor a 1440px</p>
+<pre class="pre1">
+  &lt;div class=&quot;father-element rs-wrapper col1 col2-sm&quot;&gt;
+    &lt;div class=&quot;child-element&quot;&gt;Child One&lt;/div&gt;
+    &lt;div class=&quot;child-element&quot;&gt;Child two&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+<div class="father-element rs-wrapper col1 col2-sm">
+  <div class="child-element"> Child One</div>
+  <div class="child-element"> Child Two</div>
+</div>

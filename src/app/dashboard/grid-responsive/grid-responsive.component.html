@@ -1,0 +1,25 @@
+<h1>Grid responsive</h1>
+<p>Dentro del proyecto nos encontramos con una serie de clases, las cuales tiene una función similar a la clase rs-wrapper, la diferencia es que tenemos una clase rs-wrapper-responsive, la cual nos permite, por ejemplo tener un elemento padre, al cual le definimos un número de columnas fijo, y medida que hacemos resize del viewport las columnas solas se acomodan de acuerdo al espacion disponible, sin la necesidad de utilizar media queries.</p>
+<i>El recurso lo podemos encontrar en "src/assets/styles/_object.scss"</i>
+<h3>Agregar la clase rs-wrapper-responsive al elemento padre, pero en este caso tambien le definiremos un numero de columnas, para poder observar como funciona la clase</h3>
+<pre class="pre1">
+  <code class="adapt">
+    &lt;div class=&quot;father-element rs-wrapper-responsive col5-responsive&quot;&gt;
+      &lt;div class=&quot;child-element&quot;&gt;Child One&lt;/div&gt;
+      &lt;div class=&quot;child-element&quot;&gt;Child two&lt;/div&gt;
+      &lt;div class=&quot;child-element&quot;&gt;Child Three&lt;/div&gt;
+      &lt;div class=&quot;child-element&quot;&gt;Child Four&lt;/div&gt;
+      &lt;div class=&quot;child-element&quot;&gt;Child Five&lt;/div&gt;
+      &lt;div class=&quot;child-element&quot;&gt;Child Six&lt;/div&gt;
+    &lt;/div&gt;
+  </code>
+</pre>
+<p>En este caso observamos que esta dividido en 4 columnas, ya que el calculo para las columnas esta hecho sobre un width 1200px</p>
+<div style="padding: 24px; box-sizing: border-box;" class="father-element rs-wrapper-responsive col5-responsive">
+  <div class="child-element"> Child One</div>
+  <div class="child-element"> Child Two</div>
+  <div class="child-element"> Child Three</div>
+  <div class="child-element"> Child Four</div>
+  <div class="child-element"> Child Five</div>
+  <div class="child-element"> Child Six</div>
+</div>
