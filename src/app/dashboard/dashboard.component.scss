@@ -1,0 +1,46 @@
+@import 'src/assets/styles/colors';
+
+.dashboard-container {
+  min-height: 100vh;
+}
+
+.mat-sidenav-container {
+  width: 100%;
+  flex: 1;
+}
+
+.mat-sidenav-container .material-icons {
+  margin-right: 12px;
+}
+
+.mat-sidenav-content {
+  margin-bottom: 64px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.header-sidenav {
+  background-color: rs-color-primary();
+  height: 100px;
+  display: grid;
+  place-items: center;
+}
+
+.mat-sidenav {
+  width: 250px;
+  position: fixed;
+
+  @media (max-width: 960px) {
+      background-color: white;
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+.mat-list-item:hover {
+  background-color: $color-black-alpha-10;
+}
+
+.is-active {
+  color: rs-color-secondary();
+  background-color: rgba(rs-color-secondary(100), 0.5);
+}

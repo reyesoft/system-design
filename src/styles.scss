@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'src/assets/styles/object';
+@import 'src/assets/styles/colors';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/roboto/black/Roboto-Black.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/roboto/regular/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+p, h1, a, h3, h4, i {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: $font-in-light;
+}
+
+.pre1 {
+  border:1px solid #ccc;
+  padding:10px;
+  margin:12px 0 10px;
+  font-size:0,9em;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: $font-in-light;
+}
+
+.adapt {
+  white-space:pre-wrap;
+}
+
+.father-element {
+  width: 100%;
+  background-color: $color-black-alpha-20;
+}
+
+.child-element {
+  width: 100%;
+  background-color: white;
+  height: 100px;
+  display: grid;
+  place-items: center;
+}
