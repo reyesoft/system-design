@@ -1,0 +1,7 @@
+@mixin flex-layout($direction, $justify, $align) {
+    flex-direction: $direction;
+    box-sizing: border-box;
+    display: flex !important;
+    justify-content: $justify;
+    align-items: $align;
+}
